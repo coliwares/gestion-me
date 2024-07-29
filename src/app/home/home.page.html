@@ -1,20 +1,86 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="center-content">
+        <ion-item>
+          <ion-label>Selecciona un curso</ion-label>
+          <ion-select placeholder="Cursos" [(ngModel)]="selectedLevel">
+            <ion-select-option *ngFor="let level of levels" [value]="level.id">{{ level.name }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card [class.disabled]="!selectedLevel">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="people-outline"></ion-icon>
+              Lista de curso
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card [class.disabled]="!selectedLevel">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="clipboard-outline"></ion-icon>
+              Evaluaciones
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card [class.disabled]="!selectedLevel">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="document-text-outline"></ion-icon>
+              Anotaciones
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card [class.disabled]="!selectedLevel">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="school-outline"></ion-icon>
+              PIE
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card [class.disabled]="!selectedLevel">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="ribbon-outline"></ion-icon>
+              SEP
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card [class.disabled]="!selectedLevel">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+              Otros
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

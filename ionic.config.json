@@ -1,0 +1,7 @@
+{
+  "name": "gestion-me",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
